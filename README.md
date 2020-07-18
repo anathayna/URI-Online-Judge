@@ -1,2 +1,2 @@
 # URI-Online-Judge
-Problems &amp; Contests
+Problems &amp; Contests :memo:
