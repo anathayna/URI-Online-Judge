@@ -1,2 +1,2 @@
-# URI-Online-Judge.
+# URI-Online-Judge
 Problems &amp; Contests :memo:
