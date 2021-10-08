@@ -1,37 +1,25 @@
-/*
-A primeira linha de entrada contém um valor inteiro N que indica os vários casos de teste que vem a seguir. Cada caso de teste contém um inteiro Quantia (1 ≤ Quantia ≤ 15) que representa a quantidade de cobaias utilizadas e um caractere Tipo ('C', 'R' ou 'S'), indicando o tipo de cobaia (R:Rato S:Sapo C:Coelho).
-*/
-
 #include <stdio.h>
 
 int main(void) {
-  int C=0, R=0, S=0;
-  int i, n, t, x;
-  double p, q, r;
-  char c;
+  int coelho = 0, rato = 0, sapo = 0, n, total;
+  total = coelho = rato = sapo = 0;
 
   scanf("%d", &n);
 
-  for(i = 0; i < n; i++) {
-    scanf("%d %c", &x, &c);
-    if (c == 'C') C = C + x;
-    else if (c == 'R') R = R + x;
-    else if (c == 'S') S = S + x;
+  while(n--) {
+    int x;
+    char a;
+    scanf("%d %c", &x, &a);
+    if (a == 'C') coelho += x;
+    else if (a == 'R') rato += x;
+    else if (a == 'S') sapo += x;
   }
-  t = R+C+S;
-  p =(C*100.00) / t;
-  q =(R*100.00) / t;
-  r =(S*100.00) / t;
 
-  printf("Total: %d cobaias\n", t);
+  printf("Total: %d cobaias\nTotal de coelhos: %d\nTotal de ratos: %d\nTotal de sapos: %d\n", total, coelho, rato, sapo);
 
-  printf("Total de coelhos: %d\n", C);
-  printf("Total de ratos: %d\n", R);
-  printf("Total de sapos: %d\n", S);
-
-  printf("Percentual de coelhos: %.2f %%\n", p);
-  printf("Percentual de ratos: %2.f %%\n", q);
-  printf("Percentual de sapos: %2.f %%\n", r);
+  printf("Percentual de coelhos: %.2f %%\n", ((float)(coelho)/(float)(total))*100);
+  printf("Percentual de ratos: %2.f %%\n", ((float)(rato)/(float)(total))*100);
+  printf("Percentual de sapos: %2.f %%\n", ((float)(sapo)/(float)(total))*100);
 
   return 0;
 }
